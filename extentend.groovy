@@ -7,9 +7,9 @@ pipeline {
             type: 'PT_CHECKBOX',
             visibleItemCount: 3,
             multiSelectDelimiter: ',',
-            propertyFile: env.properties,
-            propertyKey: 'dev',
-            description: 'Select up to 6 environments'
+            propertyFile: "C:\Users\Vegeta\AppData\Local\Jenkins\.jenkins\workspace\Test\env.properties",
+            propertyKey: 'test',
+            description: 'Select up to 3 environments'
         )
     }
 
@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 script{
-            echo " Your build steps here, using the "SELECTED_ENVIRONMENTS" parameter"
+            echo " $SELECTED_ENVIRONMENTS"
                 }
             }
         }
