@@ -21,7 +21,9 @@ pipeline {
         }
         stage('Build') {
             steps {
+                script{
             echo " Your build steps here, using the "SELECTED_ENVIRONMENTS" parameter"
+                }
             }
         }
     }
